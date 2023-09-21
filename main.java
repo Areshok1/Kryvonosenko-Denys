@@ -80,3 +80,21 @@ class Library {
         System.out.println("Book with ISBN '" + isbn + "' not found in the library.");
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        Library library = new Library();
+
+        library.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald", "978-0743273565", 1925));
+        library.addBook(new Book("To Kill a Mockingbird", "Harper Lee", "978-0061120084", 1960));
+        library.addBook(new Book("1984", "George Orwell", "978-0451524935", 1949));
+
+        library.showBooks();
+
+        library.searchBookByTitle("To Kill a Mockingbird");
+
+        library.removeBookByIsbn("978-0743273565");
+
+        library.showBooks();
+    }
+}
